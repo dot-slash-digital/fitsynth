@@ -4,7 +4,6 @@ const path = require("path");
 
 module.exports = {
   reactStrictMode: true,
-  assetPrefix: process.env.NODE_ENV === "production" ? "/fitsynth/" : undefined,
   images: {
     unoptimized: true,
   },
