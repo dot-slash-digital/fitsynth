@@ -6,6 +6,11 @@ import content from "@/content";
 
 import styles from "@/styles/components/footer.module.scss";
 
+type FooterLink = {
+  link: string;
+  text: string;
+};
+
 export const Footer: FC = () => {
   const { copyright, emailAddress, pageList, socialMediaList } =
     content.global.footer;
@@ -18,7 +23,7 @@ export const Footer: FC = () => {
             <div className={styles.copyright}>{copyright}</div>
             {pageList.length > 0 && (
               <div className={styles.links}>
-                {pageList.map((pageItem, index) => (
+                {pageList.map((pageItem: FooterLink, index: number) => (
                   <Link
                     className={styles.link}
                     key={index}
@@ -36,14 +41,16 @@ export const Footer: FC = () => {
             </a>
             {socialMediaList.length > 0 && (
               <div className={styles["social-media-links"]}>
-                {socialMediaList.map((socialMedia, index) => (
-                  <a
-                    className={styles["social-media-link"]}
-                    href={socialMedia.link}
-                    key={index}
-                    target="_blank"
-                  />
-                ))}
+                {socialMediaList.map(
+                  (socialMedia: FooterLink, index: number) => (
+                    <a
+                      className={styles["social-media-link"]}
+                      href={socialMedia.link}
+                      key={index}
+                      target="_blank"
+                    />
+                  )
+                )}
               </div>
             )}
           </div>

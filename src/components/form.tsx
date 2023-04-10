@@ -7,7 +7,7 @@ import styles from "@/styles/components/form.module.scss";
 
 type Field = {
   label: string;
-  type: "checkbox" | "email" | "multiline" | "select" | "text";
+  type: string; // "checkbox" | "email" | "multiline" | "select" | "text";
   required?: boolean;
   options?: string[];
 };
