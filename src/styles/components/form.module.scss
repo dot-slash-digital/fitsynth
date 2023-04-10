@@ -1,0 +1,155 @@
+@use "@/styles/colors" as colors;
+@use "@/styles/fonts" as fonts;
+@import "@/styles/breakpoints";
+
+.component {
+  background-color: colors.$blue-600;
+  border-radius: 8px;
+  padding: 40px 52px;
+
+  @include breakpoint(tablet) {
+    padding: 32px 40px;
+  }
+
+  @include breakpoint(mobile-portrait) {
+    padding: 20px 24px;
+  }
+}
+
+.row {
+  display: grid;
+  gap: 16px;
+
+  &:not(:last-child) {
+    margin-bottom: 16px;
+  }
+
+  @include breakpoint(tablet) {
+    display: block;
+    margin-bottom: 0 !important;
+  }
+}
+
+.form-field-wrapper {
+  width: 100%;
+}
+
+.form-field {
+  @include fonts.paragraph;
+  color: colors.$white;
+  padding: 12px 20px;
+  border-radius: 4px;
+  background-color: colors.$blue-500;
+  border: 2px solid colors.$blue-500;
+  outline: none;
+  width: calc(100% - 40px - 4px);
+
+  &::placeholder {
+    color: colors.$gray-200;
+  }
+
+  &:focus {
+    border-color: colors.$blue-100;
+  }
+
+  @include breakpoint(tablet) {
+    margin-bottom: 16px;
+  }
+
+  @include breakpoint(mobile-portrait) {
+    padding: 10px 16px;
+    width: calc(100% - 32px - 4px);
+  }
+}
+
+.select-field {
+  position: relative;
+
+  select {
+    width: 100%;
+    cursor: pointer;
+    appearance: none;
+
+    &.default-value {
+      color: colors.$gray-200;
+    }
+  }
+
+  .svg-wrapper {
+    position: absolute;
+    right: 20px;
+    top: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+
+    svg {
+      fill: colors.$white;
+    }
+
+    @include breakpoint(tablet) {
+      height: calc(100% - 16px);
+    }
+  }
+}
+
+.checkbox-field {
+  @include fonts.paragraph;
+  color: colors.$gray-100;
+  display: flex;
+  gap: 12px;
+  position: relative;
+  cursor: pointer;
+
+  @include breakpoint(mobile-portrait) {
+    gap: 8px;
+  }
+
+  input {
+    width: 24px;
+    height: 24px;
+    margin: 0;
+    border: 2px solid colors.$blue-200;
+    border-radius: 4px;
+    flex-shrink: 0;
+    appearance: none;
+    background-color: colors.$blue-500;
+    color: colors.$blue-500;
+    outline: none;
+
+    &:focus {
+      border-color: colors.$blue-100;
+    }
+
+    @include breakpoint(mobile-portrait) {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  svg {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    fill: colors.$blue-500;
+    stroke: colors.$blue-500;
+
+    @include breakpoint(mobile-portrait) {
+      width: 14px;
+      height: 14px;
+    }
+  }
+
+  input:checked ~ svg {
+    fill: colors.$white;
+    stroke: colors.$white;
+  }
+}
+
+.button-wrapper {
+  margin-top: 32px;
+  display: flex;
+  align-items: center;
+}

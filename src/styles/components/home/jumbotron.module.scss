@@ -1,0 +1,161 @@
+@use "@/styles/colors" as colors;
+@use "@/styles/fonts" as fonts;
+@import "@/styles/breakpoints";
+
+.component {
+  width: 100%;
+  padding: 120px 0;
+
+  @include breakpoint(mobile-landscape) {
+    padding: 80px 0;
+  }
+
+  @include breakpoint(mobile-portrait) {
+    padding: 64px 0;
+  }
+}
+
+.contents {
+  display: flex;
+  align-items: center;
+  gap: 120px;
+
+  @include breakpoint(small-desktop) {
+    gap: 100px;
+  }
+
+  @include breakpoint(tablet) {
+    gap: 52px;
+  }
+
+  @include breakpoint(mobile-landscape) {
+    flex-direction: column-reverse;
+    gap: 64px;
+  }
+
+  @include breakpoint(mobile-portrait) {
+    gap: 40px;
+  }
+}
+
+.left-col {
+  flex-grow: 1;
+}
+
+.title {
+  @include fonts.header-1;
+  color: colors.$white;
+  margin-bottom: 20px;
+
+  @include breakpoint(mobile-landscape) {
+    text-align: center;
+    margin-bottom: 16px;
+  }
+}
+
+.description {
+  @include fonts.header-3;
+  color: colors.$gray-100;
+  margin-bottom: 48px;
+
+  @include breakpoint(mobile-landscape) {
+    text-align: center;
+    margin-bottom: 32px;
+  }
+}
+
+.button-wrapper {
+  display: flex;
+  align-items: center;
+
+  @include breakpoint(mobile-landscape) {
+    justify-content: center;
+  }
+}
+
+.right-col {
+  display: flex;
+  flex-grow: 0;
+  flex-shrink: 0;
+  padding: 16px 0;
+
+  @include breakpoint(mobile-landscape) {
+    justify-content: center;
+  }
+
+  @include breakpoint(mobile-portrait) {
+    padding: 8px 0;
+  }
+}
+
+.jumbotron-image {
+  height: 487px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:nth-child(1) {
+    margin-left: 80px;
+    transform: rotate(-20deg);
+
+    @include breakpoint(small-desktop) {
+      margin-left: 72px;
+    }
+
+    @include breakpoint(tablet) {
+      margin-left: 54px;
+      transform: rotate(-15deg);
+    }
+
+    @include breakpoint(mobile-landscape) {
+      margin-left: 0;
+      transform: rotate(-20deg);
+    }
+
+    @include breakpoint(mobile-portrait) {
+      transform: rotate(-15deg);
+    }
+  }
+
+  &:nth-child(2) {
+    transform: rotate(20deg);
+
+    @include breakpoint(tablet) {
+      transform: rotate(15deg);
+    }
+
+    @include breakpoint(mobile-landscape) {
+      transform: rotate(20deg);
+    }
+
+    @include breakpoint(mobile-portrait) {
+      transform: rotate(15deg);
+    }
+  }
+
+  @include breakpoint(small-desktop) {
+    height: 450px;
+  }
+
+  @include breakpoint(tablet) {
+    height: 425px;
+  }
+
+  @include breakpoint(mobile-landscape) {
+    height: 425px;
+  }
+
+  @include breakpoint(mobile-portrait) {
+    height: 350px;
+  }
+
+  .app-preview {
+    position: absolute;
+    width: 88%;
+  }
+
+  .device-mockup {
+    position: absolute;
+    height: 100%;
+  }
+}

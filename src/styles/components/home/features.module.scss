@@ -1,0 +1,192 @@
+@use "@/styles/colors" as colors;
+@use "@/styles/fonts" as fonts;
+@import "@/styles/breakpoints";
+
+.component {
+  width: 100%;
+  padding: 120px 0;
+
+  @include breakpoint(mobile-landscape) {
+    padding: 88px 0;
+  }
+}
+
+.title {
+  @include fonts.header-2;
+  color: colors.$white;
+  text-align: center;
+  margin-bottom: 64px;
+
+  @include breakpoint(tablet) {
+    margin-bottom: 40px;
+  }
+}
+
+.contents {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 48px;
+
+  @include breakpoint(small-desktop) {
+    gap: 32px;
+  }
+
+  @include breakpoint(mobile-landscape) {
+    flex-direction: column;
+  }
+}
+
+.edge-col {
+  width: calc(100% - 430px - calc(48px * 2));
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  @include breakpoint(small-desktop) {
+    width: calc(100% - 350px - calc(32px * 2));
+  }
+
+  @include breakpoint(tablet) {
+    width: calc(100% - 325px - calc(32px * 2));
+  }
+
+  @include breakpoint(mobile-landscape) {
+    display: none;
+  }
+}
+
+.device {
+  position: relative;
+  flex-grow: 0;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 430px;
+
+  @include breakpoint(small-desktop) {
+    width: 350px;
+  }
+
+  @include breakpoint(tablet) {
+    width: 325px;
+  }
+
+  @include breakpoint(mobile-landscape) {
+    width: 100%;
+    height: 600px;
+  }
+}
+
+.device-mockup-wrapper {
+  position: absolute;
+  width: 100%;
+
+  @include breakpoint(mobile-landscape) {
+    width: unset;
+    height: 100%;
+  }
+}
+
+.device-mockup {
+  width: 88%;
+
+  @include breakpoint(mobile-landscape) {
+    width: unset;
+    height: calc(100% - 36px);
+  }
+}
+
+.mobile-features {
+  display: none;
+
+  @include breakpoint(mobile-landscape) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  @include breakpoint(mobile-landscape) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  @include breakpoint(mobile-portrait) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.feature {
+  padding: 24px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s background-color;
+
+  &:hover {
+    background-color: colors.$blue-700;
+  }
+
+  &.active {
+    background-color: colors.$blue-600;
+  }
+
+  @include breakpoint(small-desktop) {
+    padding: 20px 28px;
+  }
+
+  @include breakpoint(tablet) {
+    padding: 20px 8px;
+  }
+
+  @include breakpoint(mobile-landscape) {
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 20px 24px;
+    gap: 20px;
+  }
+
+  .icon {
+    flex-shrink: 0;
+    width: 64px;
+    height: 64px;
+    margin-bottom: 20px;
+    fill: colors.$blue-100;
+
+    @include breakpoint(small-desktop) {
+      width: 52px;
+      height: 52px;
+    }
+
+    @include breakpoint(mobile-landscape) {
+      margin-top: 4px;
+    }
+  }
+
+  .feature-info {
+    text-align: center;
+
+    @include breakpoint(mobile-landscape) {
+      text-align: left;
+    }
+  }
+
+  .feature-title {
+    @include fonts.header-3;
+    color: colors.$white;
+    margin-bottom: 8px;
+
+    @include breakpoint(mobile-portrait) {
+      margin-bottom: 4px;
+    }
+  }
+
+  .description {
+    @include fonts.paragraph;
+    color: colors.$gray-100;
+  }
+}

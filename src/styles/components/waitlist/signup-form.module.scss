@@ -1,0 +1,76 @@
+@use "@/styles/colors" as colors;
+@use "@/styles/fonts" as fonts;
+@import "@/styles/breakpoints";
+
+.component {
+  width: 100%;
+  padding: 0;
+}
+
+.contents {
+  display: flex;
+}
+
+.left {
+  width: 40%;
+  flex-shrink: 0;
+  flex-grow: 0;
+  background: linear-gradient(
+      0deg,
+      rgba(8, 36, 65, 0.85),
+      rgba(8, 36, 65, 0.85)
+    ),
+    url("/waitlist-bg.jpeg");
+  background-size: cover;
+  background-position: center center;
+
+  @include breakpoint(small-desktop) {
+    width: 35%;
+  }
+
+  @include breakpoint(mobile-landscape) {
+    width: 25%;
+  }
+
+  @include breakpoint(mobile-portrait) {
+    display: none;
+  }
+}
+
+.right {
+  width: calc(60% - calc(108px * 2));
+  flex-shrink: 0;
+  flex-grow: 0;
+  padding: 120px 0 160px;
+  margin: 0 auto;
+
+  @include breakpoint(small-desktop) {
+    width: calc(65% - calc(108px * 2));
+  }
+
+  @include breakpoint(tablet) {
+    width: calc(65% - calc(88px * 2));
+  }
+
+  @include breakpoint(mobile-landscape) {
+    width: calc(75% - calc(40px * 2));
+    padding: 80px 0 120px;
+  }
+
+  @include breakpoint(mobile-portrait) {
+    width: calc(100% - 32px);
+    padding: 100px 0;
+  }
+}
+
+.title {
+  @include fonts.header-1;
+  color: colors.$white;
+  margin-bottom: 16px;
+}
+
+.description {
+  @include fonts.paragraph;
+  color: colors.$gray-100;
+  margin-bottom: 40px;
+}

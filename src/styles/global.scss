@@ -1,0 +1,26 @@
+@use "@/styles/colors" as colors;
+
+html,
+body {
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+html {
+  background-color: colors.$blue-700;
+}
+
+body {
+  background: colors.$background-gradient;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}

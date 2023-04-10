@@ -1,0 +1,69 @@
+@use "@/styles/colors" as colors;
+@use "@/styles/fonts" as fonts;
+@import "@/styles/breakpoints";
+
+.component {
+  width: 100%;
+  padding: 120px 0;
+  background-color: colors.$blue-600;
+
+  @include breakpoint(mobile-landscape) {
+    padding: 80px 0;
+  }
+}
+
+.title {
+  @include fonts.header-1;
+  color: colors.$white;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.button-row {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.button-wrapper {
+  position: relative;
+}
+
+.caption {
+  position: absolute;
+  top: 30%;
+  left: calc(100% + 39px);
+
+  @include breakpoint(mobile-portrait) {
+    top: 60%;
+    left: calc(100% - 10px);
+  }
+}
+
+.arrow {
+  @include breakpoint(mobile-portrait) {
+    width: 50px;
+    margin-left: 32px;
+  }
+
+  svg {
+    fill: colors.$gray-100;
+    transform: rotate(300deg);
+
+    @include breakpoint(mobile-portrait) {
+      transform: rotate(315deg);
+    }
+  }
+}
+
+.text {
+  @include fonts.caption;
+  color: colors.$gray-100;
+  text-align: center;
+  margin-top: -4px;
+  width: 103px;
+
+  @include breakpoint(mobile-portrait) {
+    width: 90px;
+  }
+}

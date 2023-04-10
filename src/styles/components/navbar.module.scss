@@ -1,0 +1,146 @@
+@use "@/styles/colors" as colors;
+@use "@/styles/fonts" as fonts;
+@import "@/styles/breakpoints";
+
+.component {
+  width: 100%;
+  padding: 24px 0;
+  transition: 0.4s background-color, 0.4s height;
+  background-color: colors.$blue-700;
+
+  &.mobile-menu-open {
+    background-color: colors.$blue-600;
+
+    @include breakpoint(mobile-landscape) {
+      height: 280px;
+    }
+  }
+
+  @include breakpoint(mobile-landscape) {
+    position: absolute;
+    height: 44px;
+    overflow: hidden;
+    padding-bottom: 32px;
+    z-index: 1;
+  }
+}
+
+.contents {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @include breakpoint(mobile-landscape) {
+    display: block;
+  }
+}
+
+.head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.links-wrapper {
+  display: flex;
+  gap: 48px;
+  align-items: center;
+  justify-content: center;
+
+  .link {
+    @include fonts.paragraph;
+    color: colors.$white;
+    text-decoration: none;
+
+    a {
+      color: inherit;
+      text-decoration: inherit;
+    }
+  }
+
+  @include breakpoint(tablet) {
+    gap: 32px;
+  }
+
+  @include breakpoint(mobile-landscape) {
+    flex-direction: column;
+    align-items: flex-end;
+    margin-top: 32px;
+    gap: 28px;
+  }
+}
+
+.mobile-menu-button {
+  $button-height: 21px;
+  $bar-height: 3px;
+  $button-center: calc(calc($button-height / 2) - calc($bar-height / 2));
+  $entrance-anim: top 0.3s ease 0.3s, transform 0.3s ease-out 0.1s;
+  $exit-anim: top 0.3s ease 0.1s, transform 0.3s ease-out 0.5s;
+
+  display: none;
+  position: relative;
+  height: $button-height;
+  width: 32px;
+  color: colors.$white;
+  cursor: pointer;
+
+  @include breakpoint(mobile-landscape) {
+    display: block;
+  }
+
+  .bar {
+    position: absolute;
+    height: $bar-height;
+    width: 32px;
+    background-color: colors.$white;
+    border-radius: 3px;
+
+    &:nth-of-type(1),
+    &:nth-of-type(3) {
+      transition: $entrance-anim;
+    }
+
+    &:nth-of-type(1) {
+      top: 0;
+    }
+
+    &:nth-of-type(2) {
+      top: $button-center;
+      transition: 0.3s ease 0.3s;
+    }
+
+    &:nth-of-type(3) {
+      top: calc($button-height - $bar-height);
+    }
+  }
+
+  &.open .bar {
+    &:nth-of-type(1),
+    &:nth-of-type(3) {
+      top: $button-center;
+      transition: $exit-anim;
+    }
+
+    &:nth-of-type(1) {
+      transform: rotate(45deg);
+    }
+
+    &:nth-of-type(2) {
+      opacity: 0;
+    }
+
+    &:nth-of-type(3) {
+      transform: rotate(-45deg);
+    }
+  }
+}
+
+.mobile-navbar-spacer {
+  display: none;
+
+  @include breakpoint(mobile-landscape) {
+    display: block;
+    height: 100px;
+  }
+}

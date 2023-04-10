@@ -1,0 +1,71 @@
+@use "@/styles/colors" as colors;
+@use "@/styles/fonts" as fonts;
+@import "@/styles/breakpoints";
+
+.component {
+  width: 100%;
+  padding: 200px 0;
+
+  @include breakpoint(tablet) {
+    padding: 140px 0;
+  }
+
+  @include breakpoint(mobile-portrait) {
+    padding: 100px 0;
+  }
+}
+
+.contents {
+  display: flex;
+  gap: 80px;
+
+  @include breakpoint(mobile-landscape) {
+    flex-direction: column;
+    gap: 48px;
+  }
+
+  @include breakpoint(mobile-portrait) {
+    gap: 40px;
+  }
+}
+
+.left-col {
+  flex-grow: 1;
+}
+
+.title {
+  @include fonts.header-1;
+  color: colors.$white;
+  margin-bottom: 40px;
+
+  @include breakpoint(mobile-landscape) {
+    margin-bottom: 16px;
+  }
+}
+
+.description-paragraph {
+  @include fonts.paragraph;
+  color: colors.$gray-100;
+
+  &:not(:last-child) {
+    margin-bottom: 16px;
+  }
+}
+
+.right-col {
+  width: 743px;
+  flex-shrink: 0;
+  flex-grow: 0;
+
+  @include breakpoint(small-desktop) {
+    width: 630px;
+  }
+
+  @include breakpoint(tablet) {
+    width: 500px;
+  }
+
+  @include breakpoint(mobile-landscape) {
+    width: 100%;
+  }
+}

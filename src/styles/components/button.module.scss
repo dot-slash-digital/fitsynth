@@ -1,0 +1,41 @@
+@use "@/styles/colors" as colors;
+@use "@/styles/fonts" as fonts;
+@import "@/styles/breakpoints";
+
+.component {
+  @include fonts.paragraph;
+  padding: 12px 36px;
+  border-radius: 8px;
+  background-color: colors.$blue-100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: colors.$white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s background-color;
+
+  &:hover {
+    background-color: colors.$blue-200;
+  }
+
+  &.large {
+    padding: 20px 72px;
+
+    @include breakpoint(tablet) {
+      padding: 16px 56px;
+    }
+
+    @include breakpoint(mobile-portrait) {
+      padding: 16px 40px;
+    }
+  }
+
+  @include breakpoint(mobile-portrait) {
+    padding: 12px 32px;
+  }
+}

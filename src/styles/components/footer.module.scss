@@ -1,0 +1,70 @@
+@use "@/styles/colors" as colors;
+@use "@/styles/fonts" as fonts;
+@import "@/styles/breakpoints";
+
+.component {
+  width: 100%;
+  padding: 32px 0;
+  background-color: colors.$blue-500;
+
+  @include breakpoint(mobile-portrait) {
+    padding: 24px 0;
+  }
+}
+
+.contents {
+  display: flex;
+  justify-content: space-between;
+
+  @include breakpoint(mobile-portrait) {
+    flex-direction: column;
+  }
+}
+
+.col {
+  @include breakpoint(mobile-portrait) {
+    text-align: center;
+  }
+}
+
+.col > *:not(:last-child) {
+  margin-bottom: 12px;
+}
+
+.copyright {
+  @include fonts.paragraph;
+  color: colors.$gray-100;
+}
+
+.links {
+  display: flex;
+  gap: 40px;
+}
+
+.link {
+  @include fonts.paragraph;
+  display: block;
+  color: colors.$gray-100;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+    color: colors.$gray-200;
+  }
+}
+
+.social-media-links {
+  display: flex;
+  justify-content: flex-end;
+  gap: 6px;
+
+  @include breakpoint(mobile-portrait) {
+    justify-content: center;
+  }
+}
+
+.social-media-link {
+  width: 32px;
+  height: 32px;
+  background-color: colors.$placeholder;
+}

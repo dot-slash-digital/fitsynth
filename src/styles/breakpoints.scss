@@ -1,0 +1,28 @@
+$breakpoints: (
+  mobile-portrait: 560px,
+  mobile-landscape: 920px,
+  tablet: 1140px,
+  small-desktop: 1360px,
+);
+
+@function bp-val($name) {
+  @if type-of($name) == "number" {
+    @return $name;
+  }
+
+  $val: map-get($breakpoints, $name);
+
+  @if $val == null {
+    @error 'Breakpoint #{$name} not found';
+  }
+
+  @return $val;
+}
+
+@mixin breakpoint($name) {
+  $val: bp-val($name);
+
+  @media (max-width: $val) {
+    @content;
+  }
+}

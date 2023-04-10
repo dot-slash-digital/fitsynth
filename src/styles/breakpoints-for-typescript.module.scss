@@ -1,0 +1,8 @@
+@import "@/styles/breakpoints";
+
+:export {
+  mobilePortrait: map-get($breakpoints, mobile-portrait);
+  mobileLandscape: map-get($breakpoints, mobile-landscape);
+  tablet: map-get($breakpoints, tablet);
+  smallDesktop: map-get($breakpoints, small-desktop);
+}

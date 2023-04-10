@@ -1,0 +1,26 @@
+@import "@/styles/breakpoints";
+
+.container {
+  max-width: 1296px;
+  width: 100%;
+  padding: 0 32px;
+  margin: 0 auto;
+
+  @include breakpoint(small-desktop) {
+    max-width: 1076px;
+  }
+
+  @include breakpoint(tablet) {
+    max-width: 872px;
+    padding: 0 24px;
+  }
+
+  @include breakpoint(mobile-landscape) {
+    max-width: 528px;
+    padding: 0 16px;
+  }
+
+  @include breakpoint(mobile-portrait) {
+    max-width: calc(100% - 32px);
+  }
+}

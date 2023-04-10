@@ -1,25 +1,22 @@
 import { FC } from "react";
 
 import { CTABanner, Footer, Head, Navbar } from "@/components";
-import { Benefits, Features, Jumbotron, UserTypes } from "@/components/home";
+import { ContactForm } from "@/components/contact";
 import content from "@/content";
 import { Page } from "@/pageInfo";
 
-const Home: FC = () => {
-  const { ctaBanner } = content[Page.HOME];
+const Contact: FC = () => {
+  const { ctaBanner } = content[Page.CONTACT];
 
   return (
     <>
-      <Head />
+      <Head title="Contact" />
       <Navbar />
-      <Jumbotron />
-      <Features />
-      <Benefits />
+      <ContactForm />
       <CTABanner title={ctaBanner} />
-      <UserTypes />
       <Footer />
     </>
   );
 };
 
-export default Home;
+export default Contact;
