@@ -1,6 +1,8 @@
 import type { AppProps } from "next/app";
 import { Kanit, Mulish } from "next/font/google";
 
+import { GoogleAnalytics } from "@/components";
+
 import "@/styles/global.scss";
 
 const kanit = Kanit({ weight: ["500", "700"], subsets: ["latin"] });
@@ -16,6 +18,7 @@ const App = ({ Component, pageProps }: AppProps) => {
         }
       `}</style>
       <Component {...pageProps} />
+      <GoogleAnalytics />
     </>
   );
 };
