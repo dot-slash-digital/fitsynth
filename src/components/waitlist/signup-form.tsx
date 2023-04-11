@@ -22,7 +22,7 @@ export const SignupForm: FC = () => {
           <Form
             buttonLabel={formButton}
             fields={formFieldList}
-            onSubmit={handleSubmit}
+            formspreeId="meqwpkaw"
           />
         </div>
       </div>

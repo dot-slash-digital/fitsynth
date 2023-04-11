@@ -33,6 +33,7 @@ const TextField: FC<TextFieldType> = ({
       <input
         {...{ required }}
         className={styles["form-field"]}
+        name={isEmail ? "_replyto" : label}
         type={isEmail ? "email" : "text"}
         onChange={(e: ChangeEvent<HTMLInputElement>) =>
           setValue(e.target.value)
@@ -55,6 +56,7 @@ const MultilineField: FC<FieldValue> = ({
       <textarea
         {...{ required }}
         className={styles["form-field"]}
+        name={label}
         onChange={(e: ChangeEvent<HTMLTextAreaElement>) =>
           setValue(e.target.value)
         }
@@ -82,6 +84,7 @@ const SelectField: FC<SelectFieldType> = ({
         className={`${styles["form-field"]} ${
           !value ? styles["default-value"] : ""
         }`}
+        name={label}
         onChange={(e: ChangeEvent<HTMLSelectElement>) =>
           setValue(e.target.value)
         }
@@ -110,6 +113,7 @@ const CheckboxField: FC<FieldValue> = ({ label, setValue, value }) => {
     >
       <input
         checked={!!value}
+        name={label}
         type="checkbox"
         onChange={(e: ChangeEvent<HTMLInputElement>) =>
           setValue(e.target.checked)
@@ -138,8 +142,8 @@ const arrayToObject = (
 export const Form: FC<{
   buttonLabel: string;
   fields: Row[];
-  onSubmit: (e: FormEvent) => void;
-}> = ({ buttonLabel, fields, onSubmit }) => {
+  formspreeId: string;
+}> = ({ buttonLabel, fields, formspreeId }) => {
   const [fieldValues, setFieldValues] = useState<{
     [label: string]: string | boolean;
   }>(
@@ -157,13 +161,12 @@ export const Form: FC<{
     value: fieldValues[field.label],
   });
 
-  const handleSubmit = (e: FormEvent) => {
-    e.preventDefault();
-    onSubmit(e);
-  };
-
   return (
-    <form className={styles.component} onSubmit={handleSubmit}>
+    <form
+      action={`https://formspree.io/f/${formspreeId}`}
+      className={styles.component}
+      method="POST"
+    >
       {fields.map((row, rowIndex) => (
         <div
           className={styles.row}

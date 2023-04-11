@@ -28,7 +28,7 @@ export const ContactForm: FC = () => {
             <Form
               buttonLabel={formButton}
               fields={formFieldList}
-              onSubmit={handleSubmit}
+              formspreeId="myyabjeo"
             />
           </div>
         </div>
