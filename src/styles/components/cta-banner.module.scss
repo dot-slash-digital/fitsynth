@@ -10,6 +10,10 @@
   @include breakpoint(mobile-landscape) {
     padding: 80px 0;
   }
+
+  @include breakpoint(mobile-portrait) {
+    padding: 80px 0 96px 0;
+  }
 }
 
 .title {

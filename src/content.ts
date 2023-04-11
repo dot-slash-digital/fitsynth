@@ -273,7 +273,12 @@ const content = {
             label: "Subject",
             type: "select",
             required: true,
-            options: ["option 1", "option 2", "option 3", "option 4"],
+            options: [
+              "Customer support",
+              "Press/media inquiry",
+              "General question",
+              "Other",
+            ],
           },
         ],
         [
