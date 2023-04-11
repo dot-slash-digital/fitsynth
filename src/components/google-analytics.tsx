@@ -2,6 +2,14 @@ import { FC } from "react";
 import Script from "next/script";
 
 export const GoogleAnalytics: FC = () => {
+  // disable for local development
+  if (
+    typeof window !== "undefined" &&
+    window.location.hostname === "localhost"
+  ) {
+    return null;
+  }
+
   return (
     <>
       <Script
