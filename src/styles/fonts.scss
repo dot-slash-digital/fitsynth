@@ -13,9 +13,14 @@
     line-height: 52px;
   }
 
-  @include breakpoint(mobile-portrait) {
+  @include breakpoint(mobile-landscape) {
     font-size: 40px;
     line-height: 40px;
+  }
+
+  @include breakpoint(mobile-portrait) {
+    font-size: 32px;
+    line-height: 30px;
   }
 }
 

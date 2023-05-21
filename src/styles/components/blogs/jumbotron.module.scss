@@ -1,0 +1,19 @@
+@use "@/styles/colors" as colors;
+@use "@/styles/fonts" as fonts;
+
+.component {
+  width: 100%;
+  padding: 120px 0;
+}
+
+.contents {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.title {
+  @include fonts.header-1;
+  color: colors.$white;
+  text-align: center;
+}

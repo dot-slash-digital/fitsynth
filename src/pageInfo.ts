@@ -1,6 +1,8 @@
 import { NextRouter } from "next/router";
 
 export enum Page {
+  BLOG = "BLOG",
+  BLOGS = "BLOGS",
   CONTACT = "CONTACT",
   HOME = "HOME",
   WAITLIST = "WAITLIST",
@@ -17,6 +19,12 @@ export const routes: {
     sections?: { [section in Section]: string };
   };
 } = {
+  [Page.BLOG]: {
+    page: "",
+  },
+  [Page.BLOGS]: {
+    page: "/blogs",
+  },
   [Page.CONTACT]: {
     page: "/contact",
   },

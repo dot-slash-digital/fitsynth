@@ -18,6 +18,11 @@ import {
 } from "@/components/icons";
 import { routes, Page, Section } from "./pageInfo";
 
+export enum RichText {
+  PARAGRAPH = "PARAGRAPH",
+  ORDERED_LIST = "ORDERED_LIST",
+}
+
 const content = {
   global: {
     navbar: {
@@ -58,6 +63,68 @@ const content = {
       caption: "no credit card required!",
     },
   },
+  blogs: [
+    {
+      slug: "create-strong-online-presence-for-trainers",
+      image:
+        "https://images.unsplash.com/photo-1682687220208-22d7a2543e88?q=10",
+      title: "How to Create a Strong Online Presence for Personal Trainers",
+      date: new Date(2023, 4, 1),
+      tags: ["tag 1", "tag 2", "tag 3"],
+      content: [
+        {
+          text: "In today's digital age, it's more important than ever for personal trainers to have a strong online presence. With so many people looking for fitness advice online, personal trainers who can create a strong online presence will be more likely to attract new clients and grow their businesses.",
+          type: RichText.PARAGRAPH,
+        },
+        {
+          text: "Here are a few tips for personal trainers who want to create a strong online presence:",
+          type: RichText.PARAGRAPH,
+        },
+        {
+          items: [
+            "Create a website. Your website is your online home, so it's important to make sure it's well-designed and informative. Your website should include information about your services, your qualifications, and your contact information. It should also be easy to navigate and mobile-friendly.",
+            "Be active on social media. Social media is a great way to connect with potential clients and share your fitness expertise. Make sure you're active on the social media platforms that your target audience uses most. Share photos and videos of your workouts, offer fitness tips and advice, and answer questions from potential clients.",
+            "Create blog content. Blogging is a great way to share your fitness knowledge and expertise with the world. When you write blog posts, make sure they're informative, engaging, and well-written. You can also use your blog to promote your services and attract new clients.",
+            "Use video. Video is a great way to connect with potential clients and show them what you're all about. Create videos of your workouts, share fitness tips and advice, and answer questions from potential clients. You can also use video to promote your services and attract new clients.",
+            "Get involved in your community. Get involved in your community by attending local events, sponsoring local teams, and volunteering your time. This will help you build relationships with potential clients and raise your profile in your community.",
+            "Use keywords throughout your website and social media posts. When you create content for your website and social media, make sure to use relevant keywords throughout your content. This will help your content rank higher in search results, which will make it more likely that potential clients will find you.",
+            "Respond to comments and questions promptly. When people comment on your website or social media posts, make sure to respond promptly. This will show potential clients that you're engaged and interested in helping them.",
+            "Run contests and giveaways. Running contests and giveaways is a great way to get people to visit your website and social media pages. You can give away free fitness gear, workout plans, or even personal training sessions.",
+            "Offer discounts and promotions. Offering discounts and promotions is a great way to attract new clients. You can offer a free consultation, a discount on your services, or a free trial of your online fitness program.",
+            "Partner with other businesses. Partnering with other businesses in your community is a great way to reach new potential clients. You can partner with local gyms, health food stores, and even restaurants.",
+          ],
+          type: RichText.ORDERED_LIST,
+        },
+      ],
+    },
+    {
+      slug: "blog-2",
+      image:
+        "https://images.unsplash.com/photo-1682695794816-7b9da18ed470?q=10",
+      title: "Blog #2 title goes here",
+      date: new Date(2023, 3, 15),
+      tags: ["tag 1", "tag 2", "tag 3"],
+      content: [],
+    },
+    {
+      slug: "blog-3",
+      image:
+        "https://images.unsplash.com/photo-1682695794816-7b9da18ed470?q=10",
+      title: "Blog #3 title goes here",
+      date: new Date(2023, 3, 15),
+      tags: ["tag 1", "tag 2", "tag 3"],
+      content: [],
+    },
+    {
+      slug: "blog-4",
+      image:
+        "https://images.unsplash.com/photo-1682695794816-7b9da18ed470?q=10",
+      title: "Blog #4 title goes here",
+      date: new Date(2023, 3, 15),
+      tags: ["tag 1", "tag 2", "tag 3"],
+      content: [],
+    },
+  ],
   [Page.HOME]: {
     jumbotron: {
       title: "The Future of Fitness is Finally Here",
@@ -352,6 +419,13 @@ const content = {
       successMessage:
         "We're honored to have a place in your inbox. We promise not to abuse it.",
     },
+  },
+  [Page.BLOGS]: {
+    title: "Blogs",
+    ctaBanner: "Wanna be the first to know when FitSynth is available?",
+  },
+  [Page.BLOG]: {
+    ctaBanner: "Wanna be the first to know when FitSynth is available?",
   },
 };
 

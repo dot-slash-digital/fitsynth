@@ -1,0 +1,100 @@
+@use "@/styles/colors" as colors;
+@use "@/styles/fonts" as fonts;
+@import "@/styles/breakpoints";
+
+.component {
+  width: 100%;
+  padding-top: 120px;
+
+  @include breakpoint(mobile-landscape) {
+    padding-top: 64px;
+  }
+
+  @include breakpoint(mobile-portrait) {
+    padding-top: 40px;
+  }
+}
+
+.contents {
+  display: flex;
+  align-items: center;
+  gap: 72px;
+
+  @include breakpoint(mobile-landscape) {
+    flex-direction: column;
+    gap: 32px;
+  }
+}
+
+.image {
+  flex-grow: 0;
+  flex-shrink: 0;
+  width: 500px;
+  aspect-ratio: 1;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  @include breakpoint(small-desktop) {
+    width: 320px;
+  }
+
+  @include breakpoint(tablet) {
+    width: 280px;
+  }
+
+  @include breakpoint(mobile-landscape) {
+    width: 100%;
+  }
+}
+
+.right {
+  flex-grow: 1;
+}
+
+.title {
+  @include fonts.header-1;
+  color: colors.$white;
+  margin-bottom: 16px;
+
+  @include breakpoint(tablet) {
+    margin-bottom: 12px;
+  }
+}
+
+.date {
+  @include fonts.paragraph;
+  color: colors.$gray-100;
+  margin-bottom: 48px;
+
+  @include breakpoint(small-desktop) {
+    margin-bottom: 32px;
+  }
+
+  @include breakpoint(tablet) {
+    margin-bottom: 24px;
+  }
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+
+  @include breakpoint(mobile-landscape) {
+    gap: 10px;
+  }
+}
+
+.tag {
+  @include fonts.caption;
+  display: flex;
+  color: colors.$white;
+  border: 2px solid colors.$white;
+  border-radius: 12px;
+  padding: 7px 20px 10px;
+
+  @include breakpoint(mobile-landscape) {
+    padding: 4px 16px 7px;
+  }
+}

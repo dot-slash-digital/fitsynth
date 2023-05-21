@@ -1,0 +1,48 @@
+@use "@/styles/colors" as colors;
+@use "@/styles/fonts" as fonts;
+
+.component {
+  width: 100%;
+  padding: 64px 0 200px;
+}
+
+.contents {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.blog {
+  padding: 36px 32px 40px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: 0.3s background-color;
+
+  &:hover {
+    background-color: colors.$blue-600;
+  }
+
+  &:active {
+    background-color: colors.$blue-500;
+  }
+}
+
+.image {
+  width: 100%;
+  aspect-ratio: 1;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.title {
+  @include fonts.header-3;
+  color: colors.$white;
+  margin-top: 32px;
+}
+
+.date {
+  @include fonts.paragraph;
+  color: colors.$gray-100;
+  margin-top: 16px;
+}
