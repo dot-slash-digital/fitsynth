@@ -132,7 +132,7 @@ const content = {
         "Click below to get in on the action before the general public.",
       button: {
         title: "Join Waitlist",
-        link: routes[Page.CONTACT].page,
+        link: routes[Page.WAITLIST].page,
       },
     },
     features: {
