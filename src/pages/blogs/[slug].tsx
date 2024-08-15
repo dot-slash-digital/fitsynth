@@ -23,7 +23,7 @@ const Blog: FC = () => {
 
   return (
     <>
-      <Head {...{ title }} description={blogContent[0].text} />
+      <Head {...{ title }} hide description={blogContent[0].text} />
       <Navbar />
       <Header {...{ date, image, tags, title }} />
       <Content content={blogContent} />

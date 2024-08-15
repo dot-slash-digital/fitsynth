@@ -10,7 +10,7 @@ const Blogs: FC = () => {
 
   return (
     <>
-      <Head />
+      <Head hide />
       <Navbar />
       <Jumbotron />
       <BlogList />

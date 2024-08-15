@@ -6,3 +6,4 @@ export * from "./form";
 export * from "./head";
 export * from "./navbar";
 export * from "./section-container";
+export * from "./star-rating";

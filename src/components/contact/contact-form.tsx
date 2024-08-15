@@ -10,8 +10,6 @@ export const ContactForm: FC = () => {
   const { title, descriptionParagraphs, formFieldList, formButton } =
     content[Page.CONTACT].contactForm;
 
-  const handleSubmit = () => console.log("submitting");
-
   return (
     <div className={styles.component}>
       <SectionContainer>

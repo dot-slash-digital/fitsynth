@@ -5,6 +5,7 @@ export enum Page {
   BLOGS = "BLOGS",
   CONTACT = "CONTACT",
   HOME = "HOME",
+  TRAINER = "TRAINER",
   WAITLIST = "WAITLIST",
 }
 
@@ -13,12 +14,13 @@ export enum Section {
   USERS = "USERS",
 }
 
-export const routes: {
-  [page in Page]: {
+export const routes: Record<
+  Page,
+  {
     page: string;
-    sections?: { [section in Section]: string };
-  };
-} = {
+    sections?: Record<Section, string>;
+  }
+> = {
   [Page.BLOG]: {
     page: "",
   },
@@ -34,6 +36,9 @@ export const routes: {
       [Section.FEATURES]: "features",
       [Section.USERS]: "users",
     },
+  },
+  [Page.TRAINER]: {
+    page: "/trainers",
   },
   [Page.WAITLIST]: {
     page: "/waitlist",

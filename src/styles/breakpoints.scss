@@ -5,6 +5,14 @@ $breakpoints: (
   small-desktop: 1360px,
 );
 
+$breakpoint-container-paddings: (
+  mobile-portrait: 16px,
+  mobile-landscape: 16px,
+  tablet: 24px,
+  small-desktop: 32px,
+  desktop: 32px,
+);
+
 @function bp-val($name) {
   @if type-of($name) == "number" {
     @return $name;

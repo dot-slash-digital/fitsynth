@@ -1,0 +1,49 @@
+@use "@/styles/colors" as colors;
+@use "@/styles/fonts" as fonts;
+
+.component {
+  width: 100%;
+  padding: 20px 0 120px;
+}
+
+.contents {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.cards {
+  display: grid;
+  gap: 16px;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px 20px;
+  border-radius: 4px;
+  background-color: colors.$blue-300;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.author {
+  @include fonts.paragraph;
+  color: colors.$white;
+}
+
+.quote {
+  @include fonts.paragraph;
+  color: colors.$white;
+}

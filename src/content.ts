@@ -16,6 +16,7 @@ import {
   TravelExplore,
   WatchScreentime,
 } from "@/components/icons";
+import { Facebook, Instagram, Twitter } from "@/components/social-icons";
 import { routes, Page, Section } from "./pageInfo";
 
 export enum RichText {
@@ -123,6 +124,125 @@ const content = {
       date: new Date(2023, 3, 15),
       tags: ["tag 1", "tag 2", "tag 3"],
       content: [],
+    },
+  ],
+  trainers: [
+    {
+      id: "123",
+      header: {
+        name: "Jonathan Doe",
+        location: "Henderson, NV",
+        hourlyRate: 35.5,
+        pronouns: "he/him/his",
+        profileImage: "https://placehold.co/200x200",
+      },
+      info: {
+        accreditations: [
+          "Name of accreditation",
+          "Accreditation",
+          "Accreditation",
+          "super duper incredibly long accreditation name goes here",
+          "Name of accreditation",
+          "Name of accreditation",
+          "Accreditation",
+        ],
+        services: [
+          "Name of service",
+          "Service",
+          "Service name goes here",
+          "super duper incredibly long service name goes here",
+          "Name of service",
+          "Name of service",
+          "Service",
+        ],
+        socialMediaLinks: [
+          { icon: Twitter, label: "@jonathan-doe", link: "https://x.com" },
+          {
+            icon: Facebook,
+            label: "Jon Doe - Trainer",
+            link: "https://facebook.com",
+          },
+          {
+            icon: Instagram,
+            label: "@jd.trainer",
+            link: "https://instagram.com",
+          },
+        ],
+      },
+      about: {
+        content:
+          "Text goes here text goes here text goes here text goes here text goes here text goes here text goes here text goes here text goes here text goes here text goes here text goes here text goes here text goes here text goes here text goes here text goes here text goes here text goes here text goes here text goes here text goes here text goes here text goes here text goes here text goes here.\n\nText goes here text goes here text goes here text goes here text goes here text goes here text goes here text goes here text goes here text goes here text goes here text goes here text goes here text goes here text goes here text goes here text goes here text goes here text goes here text goes here text goes here text goes here text goes here text goes here text goes here text goes here.",
+      },
+      specialsAndDeals: [
+        {
+          title: "Special title goes here",
+          description:
+            "Text goes here text goes here text goes here text goes here text goes here text goes here text goes here text goes here.",
+        },
+        {
+          title: "Special title goes here",
+          description:
+            "Text goes here text goes here text goes here text goes here text goes here text goes here text goes here text goes here text goes here text goes here text goes here text goes here.",
+        },
+        {
+          title: "Special title goes here",
+          description:
+            "Text goes here text goes here text goes here text goes here text goes here text goes here text goes here text goes here text goes here text goes here.",
+        },
+        {
+          title: "Special title goes here",
+          description:
+            "Text goes here text goes here text goes here text goes here text goes here text goes here text goes here text goes here.",
+        },
+        {
+          title: "Special title goes here",
+          description:
+            "Text goes here text goes here text goes here text goes here text goes here text goes here text goes here text goes here text goes here text goes here text goes here text goes here.",
+        },
+        {
+          title: "Special title goes here",
+          description:
+            "Text goes here text goes here text goes here text goes here text goes here text goes here text goes here text goes here text goes here text goes here.",
+        },
+      ],
+      reviews: [
+        {
+          author: "John D.",
+          rating: 4,
+          quote:
+            "Review description goes here review description goes here review description goes here review description goes here",
+        },
+        {
+          author: "Jane D.",
+          rating: 2,
+          quote:
+            "Review description goes here review description goes here review description goes here review description goes here review description goes here review description goes here review description goes here review description goes here review description goes here review description goes here",
+        },
+        {
+          author: "Josh D.",
+          rating: 4.5,
+          quote:
+            "Review description goes here review description goes here review description goes here review description goes here review description goes here review description goes here",
+        },
+        {
+          author: "Jane D.",
+          rating: 2,
+          quote:
+            "Review description goes here review description goes here review description goes here review description goes here review description goes here review description goes here review description goes here review description goes here review description goes here review description goes here",
+        },
+        {
+          author: "John D.",
+          rating: 4,
+          quote:
+            "Review description goes here review description goes here review description goes here review description goes here",
+        },
+        {
+          author: "Josh D.",
+          rating: 4.5,
+          quote:
+            "Review description goes here review description goes here review description goes here review description goes here review description goes here review description goes here",
+        },
+      ],
     },
   ],
   [Page.HOME]: {

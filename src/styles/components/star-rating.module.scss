@@ -1,0 +1,6 @@
+@use "@/styles/colors" as colors;
+
+.component {
+  display: flex;
+  fill: colors.$yellow;
+}

@@ -1,0 +1,56 @@
+@use "@/styles/colors" as colors;
+@use "@/styles/fonts" as fonts;
+@import "@/styles/breakpoints";
+
+.component {
+  width: 100%;
+  padding-top: 20px;
+  overflow: hidden;
+}
+
+.contents {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.scrollable-cards-container {
+  width: 100%;
+}
+
+.cards {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  overflow-y: auto;
+  padding-bottom: 20px;
+}
+
+.card {
+  background-color: colors.$blue-300;
+  padding: 24px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  border-radius: 4px;
+  width: 360px;
+  flex-shrink: 0;
+
+  @include breakpoint(mobile-landscape) {
+    width: calc(map-get($breakpoints, "mobile-portrait") / 2);
+  }
+
+  @include breakpoint(mobile-portrait) {
+    width: 60vw;
+  }
+}
+
+.card-title {
+  @include fonts.header-3;
+  color: colors.$white;
+}
+
+.card-description {
+  @include fonts.paragraph;
+  color: colors.$white;
+}

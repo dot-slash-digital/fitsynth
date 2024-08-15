@@ -17,5 +17,6 @@ export * from "./person-pin-circle";
 export * from "./person-search";
 export * from "./record-voice-over";
 export * from "./restaurant";
+export * from "./star";
 export * from "./travel-explore";
 export * from "./watch-screentime";

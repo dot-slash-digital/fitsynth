@@ -1,26 +1,42 @@
+@use "sass:map";
 @import "@/styles/breakpoints";
 
 .container {
-  max-width: 1296px;
+  $padding: map.get($breakpoint-container-paddings, "desktop");
+  $max-width: map.get($breakpoints, "small-desktop");
+
+  max-width: calc($max-width - calc($padding * 2));
   width: 100%;
-  padding: 0 32px;
+  padding: 0 $padding;
   margin: 0 auto;
 
   @include breakpoint(small-desktop) {
-    max-width: 1076px;
+    $padding: map.get($breakpoint-container-paddings, "small-desktop");
+    $max-width: map.get($breakpoints, "tablet");
+
+    max-width: calc($max-width - calc($padding * 2));
+    padding: 0 $padding;
   }
 
   @include breakpoint(tablet) {
-    max-width: 872px;
-    padding: 0 24px;
+    $padding: map.get($breakpoint-container-paddings, "tablet");
+    $max-width: map.get($breakpoints, "mobile-landscape");
+
+    max-width: calc($max-width - calc($padding * 2));
+    padding: 0 $padding;
   }
 
   @include breakpoint(mobile-landscape) {
-    max-width: 528px;
-    padding: 0 16px;
+    $padding: map.get($breakpoint-container-paddings, "mobile-landscape");
+    $max-width: map.get($breakpoints, "mobile-portrait");
+
+    max-width: calc($max-width - calc($padding * 2));
+    padding: 0 $padding;
   }
 
   @include breakpoint(mobile-portrait) {
-    max-width: calc(100% - 32px);
+    $max-width: map.get($breakpoint-container-paddings, "mobile-portrait");
+
+    max-width: calc(100% - calc($max-width * 2));
   }
 }

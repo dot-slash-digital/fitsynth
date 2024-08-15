@@ -1,4 +1,4 @@
-import { ChangeEvent, FC, FormEvent, Fragment, useState } from "react";
+import { ChangeEvent, FC, Fragment, useState } from "react";
 
 import { Button } from "@/components";
 import { CheckmarkIcon, ChevronDownIcon } from "@/components/icons";
